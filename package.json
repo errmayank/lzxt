@@ -1,0 +1,45 @@
+{
+	"name": "lzxt",
+	"version": "0.0.0",
+	"license": "MIT",
+	"author": "Mayank Verma <errmayank@gmail.com>",
+	"repository": "https://github.com/errmayank/lzxt",
+	"bugs": "https://github.com/errmayank/lzxt/issues",
+	"private": false,
+	"type": "module",
+	"module": "./main.js",
+	"types": "./main.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./main.d.ts",
+				"default": "./main.js"
+			}
+		}
+	},
+	"scripts": {
+		"prebuild": "rm -rf ./build package.tgz",
+		"format": "prettier --write \"**/*.{js,cjs,mjs,ts,cts,mts,json,md,yaml,yml}\"",
+		"format-check": "prettier --check \"**/*.{js,cjs,mjs,ts,cts,mts,json,md,yaml,yml}\"",
+		"lint": "eslint .",
+		"dev": "tsup --config=tsup.config.js --watch",
+		"changeset-add": "changeset add",
+		"changeset-status": "changeset status --verbose",
+		"changeset-version": "changeset version && pnpm install --lockfile-only && pnpm format",
+		"changeset-tag": "changeset tag",
+		"build": "tsup --config=tsup.config.js",
+		"build-tarball": "pnpm build && (cp -a package.json LICENSE.md README.md ./build) && (cd ./build && npm pack --pack-destination ..) && mv lzxt-*.tgz package.tgz"
+	},
+	"devDependencies": {
+		"@changesets/changelog-github": "0.5.0",
+		"@changesets/cli": "2.27.7",
+		"@eslint/js": "9.7.0",
+		"@types/node": "20.14.11",
+		"eslint": "9.7.0",
+		"globals": "15.8.0",
+		"prettier": "3.3.3",
+		"tsup": "8.2.2",
+		"typescript-eslint": "7.17.0"
+	},
+	"keywords": ["lz", "next", "lzxt"]
+}

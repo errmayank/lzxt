@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# logs
+logs/
+*.log
+pnpm-debug.log*
+
+# testing
+coverage/
+
+# build
+build/
+*.tgz
+
+# misc
+.DS_Store
+*.pem
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/

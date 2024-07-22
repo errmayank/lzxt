@@ -1,0 +1,13 @@
+# misc
+.vscode/
+pnpm-lock.yaml
+
+# dependencies
+node_modules/
+
+# output
+build/
+package/
+
+# tests
+coverage/
